@@ -1,4 +1,5 @@
-#include "fast_dpi.h"
+#include "/usr/include/libndpi-1.8.0/libndpi/ndpi_api.h"
+#include <stdlib.h>
 
 void debug_printf(u_int32_t protocol, void *id_struct, ndpi_log_level_t log_level, const char *format, ...) {
     va_list va_ap;
@@ -35,7 +36,7 @@ struct ndpi_detection_module_struct* init_ndpi() {
     u_int32_t detection_tick_resolution = 1000;
     
     struct ndpi_detection_module_struct* my_ndpi_struct =
-        ndpi_init_detection_module(detection_tick_resolution, malloc, free, debug_printf);
+        ndpi_init_detection_module();
 
     if (my_ndpi_struct == NULL) {
         // printf("Can't init nDPI");
