@@ -27,7 +27,7 @@ project(FastNetMon)
 set (FASTNETMON_VERSION_MAJOR 1)
 set (FASTNETMON_VERSION_MINOR 1)
 
-set(CMAKE_INSTALL_SYSTEMD_SERVICEDIR "/lib/systemd/system"
+set(CMAKE_INSTALL_SYSTEMD_SERVICEDIR "/usr/lib/systemd/system"
   CACHE PATH "Location for systemd service files")
 
 if (ENABLE_GOBGP_SUPPORT)
@@ -619,7 +619,7 @@ if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "Dr
     set(CMAKE_INSTALL_SYSCONFDIR "etc")
 else()
     set(CMAKE_INSTALL_BINDIR "/usr/bin")
-    set(CMAKE_INSTALL_SBINDIR "/usr/sbin")
+    set(CMAKE_INSTALL_SBINDIR "/usr/local/sbin")
     set(CMAKE_INSTALL_SYSCONFDIR "/etc")
 endif()
 
