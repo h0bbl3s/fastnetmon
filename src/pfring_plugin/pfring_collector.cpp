@@ -476,7 +476,7 @@ void* pf_ring_packet_consumer_thread(void* _id) {
 
 #ifdef PF_RING_ZC
 int rr = -1;
-int32_t rr_distribution_func(pfring_zc_pkt_buff* pkt_handle, pfring_zc_queue* in_queue, void* user) {
+long rr_distribution_func(pfring_zc_pkt_buff* pkt_handle, pfring_zc_queue* in_queue, void* user) {
     long num_out_queues = (long)user;
 
     if (++rr == num_out_queues) {
